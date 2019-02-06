@@ -20,11 +20,11 @@ class Config:
         self.FEATURE_FACTOR = args.flambda
 
         # ================== DATASET
-        self.DATA_FILE = root.joinpath(root.parents[0],'data/').as_poisx().as_poisx() + dataset.DATASET + '-train'
-        self.DATA_VAL_FILE  = root.joinpath(root.parents[0],'data/').as_poisx().as_poisx() + dataset.DATASET + '-val'
-        self.DATA_TEST_FILE = root.joinpath(root.parents[0],'data/').as_poisx().as_poisx() + dataset.DATASET + '-test'
-        self.META_FILE = root.joinpath(root.parents[0],'data/').as_poisx().as_poisx() + dataset.DATASET + '-meta'
-        self.HPC_FILE = root.joinpath(root.parents[0],'data/').as_poisx().as_poisx() + dataset.DATASET + '-hpc'
+        self.DATA_FILE = root.joinpath(root.parents[0],'data/').as_posix().as_posix() + dataset.DATASET + '-train'
+        self.DATA_VAL_FILE  = root.joinpath(root.parents[0],'data/').as_posix().as_posix() + dataset.DATASET + '-val'
+        self.DATA_TEST_FILE = root.joinpath(root.parents[0],'data/').as_posix().as_posix() + dataset.DATASET + '-test'
+        self.META_FILE = root.joinpath(root.parents[0],'data/').as_posix().as_posix() + dataset.DATASET + '-meta'
+        self.HPC_FILE = root.joinpath(root.parents[0],'data/').as_posix().as_posix() + dataset.DATASET + '-hpc'
 
         self.CLASSES = dataset.CLASSES
         self.FEATURE_DIM = dataset.FEATURES
