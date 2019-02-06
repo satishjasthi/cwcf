@@ -4,6 +4,9 @@
 import numpy as np
 import importlib
 
+from utils import root
+
+
 class Config:
     def init(self, args):
         dataset = importlib.import_module("config_datasets." + args.dataset)
@@ -17,11 +20,11 @@ class Config:
         self.FEATURE_FACTOR = args.flambda
 
         # ================== DATASET
-        self.DATA_FILE = '../data/' + dataset.DATASET + '-train'
-        self.DATA_VAL_FILE  = '../data/' + dataset.DATASET + '-val'
-        self.DATA_TEST_FILE = '../data/' + dataset.DATASET + '-test'
-        self.META_FILE = '../data/' + dataset.DATASET + '-meta'
-        self.HPC_FILE = '../data/' + dataset.DATASET + '-hpc'
+        self.DATA_FILE = root.joinpath(root.parents[0],'data/') + dataset.DATASET + '-train'
+        self.DATA_VAL_FILE  = root.joinpath(root.parents[0],'data/') + dataset.DATASET + '-val'
+        self.DATA_TEST_FILE = root.joinpath(root.parents[0],'data/') + dataset.DATASET + '-test'
+        self.META_FILE = root.joinpath(root.parents[0],'data/') + dataset.DATASET + '-meta'
+        self.HPC_FILE = root.joinpath(root.parents[0],'data/') + dataset.DATASET + '-hpc'
 
         self.CLASSES = dataset.CLASSES
         self.FEATURE_DIM = dataset.FEATURES
