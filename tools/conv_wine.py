@@ -6,12 +6,14 @@
 import pandas as pd
 import numpy as np
 
+from utils import root
+
 SEED = 998823
 
 #---
 np.random.seed(SEED)
 
-data = pd.read_csv("../data/raw/wine.data", header=None, sep=',')
+data = pd.read_csv(root.joinpath(root.parents[0], "data/raw/wine.data"), header=None, sep=',')
 
 cols = data.columns.tolist()
 cols = cols[1:] + cols[:1]
@@ -43,9 +45,9 @@ print("Train len:", data_train.shape[0])
 print("Val len:  ", data_val.shape[0])
 print("Test len: ", data_test.shape[0])
 
-data_train.to_pickle("../data/wine-train")
-data_val.to_pickle("../data/wine-val")
-data_test.to_pickle("../data/wine-test")
+data_train.to_pickle(root.joinpath(root.parents[0], "data/wine-train"))
+data_val.to_pickle(root.joinpath(root.parents[0], "data/wine-val"))
+data_test.to_pickle(root.joinpath(root.parents[0], "data/wine-test"))
 
 #--- prepare meta
 idx = data.columns[:-1]
@@ -61,4 +63,4 @@ meta = meta.astype('float32')
 print("\nMeta:")
 print(meta)
 
-meta.to_pickle("../data/wine-meta")
+meta.to_pickle(root.joinpath(root.parents[0], "data/wine-meta"))

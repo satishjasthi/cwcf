@@ -1,3 +1,7 @@
+from pathlib import Path
+
+root = Path(__file__)
+
 import sys, time
 
 def print_progress(i, total, step=100):
